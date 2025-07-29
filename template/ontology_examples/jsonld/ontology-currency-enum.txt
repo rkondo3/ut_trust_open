@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "ut-trust": "https://dss.i.u-tokyo.ac.jp/"
+  },
+  "@type": "ut-trust:redemptionTradeConfirmationNotice",
+  "fundNumber": 987654321,
+  "brandName": "Global Equity Strategy Fund Series II",
+  "tradeDate": "2025-07-07",
+  "valuationDate": "2025-07-08",
+  "settlementDate": "2025-07-11",
+  "unitPrice": {
+    "@type": "schema:MonetaryAmount",
+    "value": 9987.65,
+    "ut-trust:currency": {
+      "@id": "ut-trust:JPY"
+    }
+  },
+  "quantity": 12000,
+  "grossAmount": {
+    "@type": "schema:MonetaryAmount",
+    "value": 119851800,
+    "ut-trust:currency": {
+      "@id": "ut-trust:JPY"
+    }
+  },
+  "brokerageFee": {
+    "@type": "schema:MonetaryAmount",
+    "value": 3000,
+    "ut-trust:currency": {
+      "@id": "ut-trust:JPY"
+    }
+  },
+  "settlementAmountInBrandCurrency": {
+    "@type": "schema:MonetaryAmount",
+    "value": 780000,
+    "ut-trust:currency": {
+      "@id": "ut-trust:USD"
+    }
+  },
+  "settlementAmountInSettlementCurrency": {
+    "@type": "schema:MonetaryAmount",
+    "value": 119848800,
+    "ut-trust:currency": {
+      "@id": "ut-trust:JPY"
+    }
+  }
+}

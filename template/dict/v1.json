@@ -1,0 +1,21 @@
+{
+  "ut-trust:docInfo": "A trade (subscription/redemption) confirmation notice sent from a broker (securities company) to a trustee (asset management bank) in asset management operations. It refers to a document or data confirming and notifying the execution of a subscription (purchase) or redemption (sale) order for financial products (e.g., investment trusts, stocks, bonds, etc.).",
+  "ut-trust:docConfirm": "A trade confirmation notice sent from a broker (securities company) to a trustee (asset management bank) in asset management operations. It refers to a document or data confirming and notifying the execution of a subscription (purchase) or redemption (sale) order for financial products (e.g., investment trusts, stocks, bonds, etc.).",
+  "ut-trust:docTypePurchase": "subscriptionTradeConfirmationNotice",
+  "ut-trust:docInfoPurchase": "A subscription trade confirmation notice sent from a broker (securities company) to a trustee (asset management bank) in asset management operations for subscription transactions. Refers to a document or data confirming and notifying the execution of a purchase order for financial products (e.g., investment trusts, stocks, bonds, etc.).",
+  "ut-trust:docTypeSales": "redemptionTradeConfirmationNotice",
+  "ut-trust:docInfoSales": "A redemption trade confirmation notice sent from a broker (securities company) to a trustee (asset management bank) in asset management operations for redemption transactions. Refers to a document or data confirming and notifying the execution of a redemption order for financial products (e.g., investment trusts, stocks, bonds, etc.).",
+  "ut-trust:fundNumber": "The fund of the trustor, managed within the asset management bank for this transaction. It is often written alongside the trustee’s name or in the format '{Trustor} acting as trustee for {Trustee}', and it is a 9-digit identifier for this target subscription trade notice document.",
+  "ut-trust:brandName": "The brand name of the security that is the investment target in the transaction of the subscription or redemption trade confirmation notice. It is often written as a heading in the confirmation notice. If the name consists of Fund, Class, Series, extract all relevant information.",
+  "ut-trust:tradeDate": "The date on which the transaction becomes valid.",
+  "ut-trust:valuationDate": "The date used as the basis for calculating the price of the invested security in the subscription or redemption trade confirmation notice.",
+  "ut-trust:settlementDate": "The date on which funds or securities are actually transferred following the execution of the subscription or redemption transaction.",
+  "ut-trust:unitPrice": "The unit price of the investment security in the subscription or redemption trade confirmation notice.",
+  "ut-trust:quantity": "The number of units involved in the transaction of the subscription or redemption trade confirmation notice.",
+  "ut-trust:grossAmount": "The gross amount for the subscribed or sold security in the transaction. It represents only the amount contributed to the investment, excluding brokerage fees, commissions, or charges.",
+  "ut-trust:brokerageFee": "The fee charged by the broker (securities company) in the subscription or redemption trade confirmation notice. Some confirmation notices may not state this fee, in which case set it to 0. The currency should be the same as the settlement currency.",
+  "ut-trust:settlementAmountInBrandCurrency": "The settlement amount in the brand (base) currency specified in the security. This corresponds to the payment amount that must be paid. It refers to the currency used for managing the security. This item covers cases where the settlement currency and the transaction currency differ. If not specified, it is equal to the amount in the settlement currency.",
+  "ut-trust:settlementAmountInSettlementCurrency": "The settlement amount in the transaction (settlement) currency. This amount corresponds to the payment that must be paid.",
+  "ut-trust:brandCurrency": "It refers to the base currency used for managing the security.",
+  "ut-trust:settlementCurrency": "The currency used for the payment (transaction)."
+}

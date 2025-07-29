@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "ut-trust": "https://dss.i.u-tokyo.ac.jp/"
+  },
+  "@type": "ut-trust:redemptionTradeConfirmationNotice",
+  "fundNumber": 987654321,
+  "brandName": "Global Equity Fund",
+  "tradeDate": "2025-08-15",
+  "valuationDate": "2025-08-16",
+  "settlementDate": "2025-08-20",
+  "unitPrice": {
+    "value": 15000.5,
+    "currency": "USD"
+  },
+  "quantity": 5000,
+  "grossAmount": {
+    "@type": "schema:MonetaryAmount",
+    "value": 75002500,
+    "currency": "USD"
+  },
+  "brokerageFee": {
+    "@type": "schema:MonetaryAmount",
+    "value": 1000,
+    "currency": "USD"
+  },
+  "settlementAmountInBrandCurrency": {
+    "@type": "schema:MonetaryAmount",
+    "value": 74901500,
+    "currency": "USD"
+  },
+  "settlementAmountInSettlementCurrency": {
+    "@type": "schema:MonetaryAmount",
+    "value": 74901500,
+    "currency": "USD"
+  }
+}

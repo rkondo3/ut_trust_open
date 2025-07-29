@@ -1,0 +1,14 @@
+{
+  "fundNumber": "123456789",
+  "brandName": "abcdefg",
+  "valuationDate": "2022-10-20",
+  "tradeDate": "2022-10-21",
+  "settlementDate": "2022-10-22",
+  "unitPrice": 100,
+  "quantity": 30,
+  "grossAmount": 3000,
+  "brandCurrency": "USD",
+  "settlementAmountInBrandCurrency": 3000,
+  "settlementCurrency": "USD",
+  "settlementAmountInSettlementCurrency": 3000
+}
