@@ -1,0 +1,276 @@
+{
+    "@context": {
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "schema": "https://schema.org/",
+      "ut-trust": "https://dss.i.u-tokyo.ac.jp/",
+      "swrl": "http://www.w3.org/2003/11/swrl#"
+    },
+    "@graph": [
+      {
+        "@id": "schema:Thing",
+        "@type": "rdfs:Class",
+        "rdfs:comment": "The most generic type of item.",
+        "rdfs:label": "Thing"
+      },
+      {
+        "@id": "schema:CreativeWork",
+        "@type": "rdfs:Class",
+        "rdfs:comment": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+        "rdfs:label": "CreativeWork",
+        "rdfs:subClassOf": {
+          "@id": "schema:Thing"
+        },
+        "schema:contributor": {
+          "@id": "https://schema.org/docs/collab/rNews"
+        }
+      },
+      {
+        "@id": "schema:DateCreated",
+        "@type": "rdf:Property",
+        "rdfs:comment": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+        "rdfs:label": "dateCreated",
+        "schema:domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "schema:rangeIncludes": [
+          {
+            "@id": "schema:Date"
+          }
+        ]
+      },
+      {
+        "@id": "schema:Text",
+        "@type": ["schema:DataType", "rdfs:Class"],
+        "rdfs:comment": "Data type: Text.",
+        "rdfs:label": "Text"
+      },
+      {
+        "@id": "schema:Integer",
+        "@type": "rdfs:Class",
+        "rdfs:comment": "Data type: Integer.",
+        "rdfs:label": "Integer",
+        "rdfs:subClassOf": {
+          "@id": "schema:Number"
+        }
+      },
+      {
+        "@id": "schema:Date",
+        "@type": ["schema:DataType", "rdfs:Class"],
+        "rdfs:comment": "A date value in YYYYMMDD format.",
+        "rdfs:label": "Date"
+      },
+      {
+        "@id": "schema:MonetaryAmount",
+        "@type": "rdfs:Class",
+        "rdfs:comment": "A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.",
+        "rdfs:label": "MonetaryAmount",
+        "rdfs:subClassOf": {
+          "@id": "schema:StructuredValue"
+        },
+        "schema:contributor": {
+          "@id": "https://schema.org/docs/collab/FIBO"
+        }
+      },
+      {
+        "@id": "schema:value",
+        "@type": "rdf:Property",
+        "rdfs:comment": "The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+        "rdfs:label": "value",
+        "schema:contributor": {
+          "@id": "https://schema.org/docs/collab/GoodRelationsTerms"
+        },
+        "schema:domainIncludes": [
+          {
+            "@id": "schema:QuantitativeValue"
+          },
+          {
+            "@id": "schema:MonetaryAmount"
+          },
+          {
+            "@id": "schema:PropertyValue"
+          }
+        ],
+        "schema:rangeIncludes": [
+          {
+            "@id": "schema:Boolean"
+          },
+          {
+            "@id": "schema:Text"
+          },
+          {
+            "@id": "schema:Number"
+          },
+          {
+            "@id": "schema:StructuredValue"
+          }
+        ]
+      },
+      {
+        "@id": "ut-trust:confirmationNotice",
+        "@type": "rdfs:Class",
+        "rdfs:comment": "{{ comments['ut-trust:docConfirm'] }}",
+        "rdfs:label": "Trade Confirmation Notice",
+        "rdfs:subClassOf": {
+          "@id": "schema:CreativeWork"
+        }
+      },
+      {
+        "@id": "ut-trust:subscriptionTradeConfirmationNotice",
+        "@type": "rdfs:Class",
+        "rdfs:comment": "{{ comments['ut-trust:docInfoPurchase'] }}",
+        "rdfs:label": "Subscription Trade Confirmation Notice",
+        "rdfs:subClassOf": {
+          "@id": "ut-trust:confirmationNotice"
+        }
+      },
+      {
+        "@id": "ut-trust:redemptionTradeConfirmationNotice",
+        "@type": "rdfs:Class",
+        "rdfs:comment": "{{ comments['ut-trust:docInfoSales'] }}",
+        "rdfs:label": "Redemption Trade Confirmation Notice",
+        "rdfs:subClassOf": {
+          "@id": "ut-trust:confirmationNotice"
+        }
+      },
+      {
+        "@id": "ut-trust:fundNumber",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:fundNumber'] }}",
+        "rdfs:label": "Fund Number",
+        "schema:domainIncludes": [
+          {
+            "@id": "ut-trust:confirmationNotice"
+          }
+        ],
+        "schema:rangeIncludes": [
+          {
+            "@id": "schema:Number"
+          }
+        ]
+      },
+      {
+        "@id": "ut-trust:brandName",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:brandName'] }}",
+        "rdfs:label": "Brand Name",
+        "schema:domainIncludes": [
+          {
+            "@id": "ut-trust:confirmationNotice"
+          }
+        ],
+        "schema:rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ]
+      },
+      {
+        "@id": "ut-trust:tradeDate",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:tradeDate'] }}",
+        "rdfs:label": "Trade Date",
+        "schema:domainIncludes": [
+          {
+            "@id": "ut-trust:confirmationNotice"
+          }
+        ],
+        "schema:rangeIncludes": [
+          {
+            "@id": "schema:Date"
+          }
+        ]
+      },
+      {
+        "@id": "ut-trust:valuationDate",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:valuationDate'] }}",
+        "rdfs:label": "valuationDate",
+        "schema:domainIncludes": [
+          {
+            "@id": "ut-trust:confirmationNotice"
+          }
+        ],
+        "schema:rangeIncludes": [
+          {
+            "@id": "schema:Date"
+          }
+        ]
+      },
+      {
+        "@id": "ut-trust:settlementDate",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:settlementDate'] }}",
+        "rdfs:label": "Settlement Date",
+        "schema:domainIncludes": [
+          {
+            "@id": "ut-trust:confirmationNotice"
+          }
+        ],
+        "schema:rangeIncludes": [
+          {
+            "@id": "schema:Date"
+          }
+        ]
+      },
+      {
+        "@id": "ut-trust:unitPrice",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:unitPrice'] }}",
+        "rdfs:label": "Unit Price",
+        "schema:domainIncludes": [{ "@id": "ut-trust:confirmationNotice" }],
+        "schema:rangeIncludes": [{ "@id": "schema:MonetaryAmount" }]
+      },
+      {
+        "@id": "ut-trust:quantity",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:quantity'] }}",
+        "rdfs:label": "quantity",
+        "schema:domainIncludes": [{ "@id": "ut-trust:confirmationNotice" }],
+        "schema:rangeIncludes": [{ "@id": "schema:Number" }]
+      },
+      {
+        "@id": "ut-trust:grossAmount",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:grossAmount'] }}",
+        "rdfs:label": "Gross Amount",
+        "schema:domainIncludes": [{ "@id": "ut-trust:confirmationNotice" }],
+        "schema:rangeIncludes": [{ "@id": "schema:MonetaryAmount" }]
+      },
+      {
+        "@id": "ut-trust:brokerageFee",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:brokerageFee'] }}",
+        "rdfs:label": "Brokerage Fee",
+        "schema:domainIncludes": [{ "@id": "ut-trust:confirmationNotice" }],
+        "schema:rangeIncludes": [{ "@id": "schema:MonetaryAmount" }]
+      },
+      {
+        "@id": "ut-trust:settlementAmountInBrandCurrency",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:settlementAmountInBrandCurrency'] }}",
+        "rdfs:label": "Settlement Amount In Brand Currency",
+        "schema:domainIncludes": [{ "@id": "ut-trust:confirmationNotice" }],
+        "schema:rangeIncludes": [{ "@id": "schema:MonetaryAmount" }]
+      },
+      {
+        "@id": "ut-trust:settlementAmountInSettlementCurrency",
+        "@type": "rdf:Property",
+        "rdfs:comment": "{{ comments['ut-trust:settlementAmountInSettlementCurrency'] }}",
+        "rdfs:label": "Settlement Amount In Settlement Currency",
+        "schema:domainIncludes": [{ "@id": "ut-trust:confirmationNotice" }],
+        "schema:rangeIncludes": [{ "@id": "schema:MonetaryAmount" }]
+      },
+      {
+        "@id": "ut-trust:currency",
+        "@type": "rdf:Property",
+        "rdfs:label": "Currency",
+        "rdfs:comment": "Currency of the transaction. One of 'JPY', 'USD', 'EUR', etc.",
+        "schema:domainIncludes": { "@id": "schema:MonetaryAmount" },
+        "schema:rangeIncludes": { "@id": "schema:Text" }
+      }
+    ]
+  }
+  
